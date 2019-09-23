@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>CFPB complaint Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['All', 'Mortgage', 286617],
+['Mortgage', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 43294],
+['Mortgage', 'WELLS FARGO & COMPANY', 37459],
+['Mortgage', 'OCWEN FINANCIAL CORPORATION', 27074],
+['Mortgage', 'JPMORGAN CHASE & CO.', 21369],
+['Mortgage', 'NATIONSTAR MORTGAGE', 20222],
+['All', 'Credit reporting, credit repair services, or other personal consumer reports', 279686],
+['Credit reporting, credit repair services, or other personal consumer reports', 'EQUIFAX, INC.', 80851],
+['Credit reporting, credit repair services, or other personal consumer reports', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 70258],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Experian Information Solutions Inc.', 69556],
+['Credit reporting, credit repair services, or other personal consumer reports', 'CAPITAL ONE FINANCIAL CORPORATION', 4342],
+['Credit reporting, credit repair services, or other personal consumer reports', 'SYNCHRONY FINANCIAL', 2708],
+['All', 'Debt collection', 262569],
+['Debt collection', 'ENCORE CAPITAL GROUP INC.', 11043],
+['Debt collection', 'PORTFOLIO RECOVERY ASSOCIATES INC', 10065],
+['Debt collection', 'ERC', 6540],
+['Debt collection', 'CAPITAL ONE FINANCIAL CORPORATION', 4444],
+['Debt collection', 'CITIBANK, N.A.', 4404],
+['All', 'Credit reporting', 140432],
+['Credit reporting', 'EQUIFAX, INC.', 48128],
+['Credit reporting', 'Experian Information Solutions Inc.', 45378],
+['Credit reporting', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 39821],
+['Credit reporting', 'Fidelity National Information Services, Inc. (FNIS)', 831],
+['Credit reporting', 'Credit Karma, Inc.', 411],
+['All', 'Credit card', 89190],
+['Credit card', 'CITIBANK, N.A.', 16817],
+['Credit card', 'CAPITAL ONE FINANCIAL CORPORATION', 12920],
+['Credit card', 'JPMORGAN CHASE & CO.', 10373],
+['Credit card', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 9111],
+['Credit card', 'SYNCHRONY FINANCIAL', 8779],
+['All', 'Bank account or service', 86206],
+['Bank account or service', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 13917],
+['Bank account or service', 'WELLS FARGO & COMPANY', 13333],
+['Bank account or service', 'JPMORGAN CHASE & CO.', 9816],
+['Bank account or service', 'CITIBANK, N.A.', 4450],
+['Bank account or service', 'U.S. BANCORP', 3726],
+['All', 'Credit card or prepaid card', 57335],
+['Credit card or prepaid card', 'CITIBANK, N.A.', 8577],
+['Credit card or prepaid card', 'CAPITAL ONE FINANCIAL CORPORATION', 7701],
+['Credit card or prepaid card', 'JPMORGAN CHASE & CO.', 6159],
+['Credit card or prepaid card', 'SYNCHRONY FINANCIAL', 5314],
+['Credit card or prepaid card', 'AMERICAN EXPRESS COMPANY', 4841],
+['All', 'Student loan', 54046],
+['Student loan', 'Navient Solutions, LLC.', 26102],
+['Student loan', 'AES/PHEAA', 7937],
+['Student loan', 'NELNET, INC.', 2491],
+['Student loan', 'SLM CORPORATION', 1687],
+['Student loan', 'WELLS FARGO & COMPANY', 1670],
+['All', 'Checking or savings account', 49138],
+['Checking or savings account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 7863],
+['Checking or savings account', 'JPMORGAN CHASE & CO.', 6948],
+['Checking or savings account', 'WELLS FARGO & COMPANY', 5824],
+['Checking or savings account', 'CITIBANK, N.A.', 2618],
+['Checking or savings account', 'CAPITAL ONE FINANCIAL CORPORATION', 1899],
+['All', 'Consumer Loan', 31604],
+['Consumer Loan', 'SANTANDER CONSUMER USA HOLDINGS INC.', 2537],
+['Consumer Loan', 'WELLS FARGO & COMPANY', 2528],
+['Consumer Loan', 'ALLY FINANCIAL INC.', 2094],
+['Consumer Loan', 'CAPITAL ONE FINANCIAL CORPORATION', 1212],
+['Consumer Loan', 'JPMORGAN CHASE & CO.', 1029]]);
+
+  // Sets chart options.
+  var colors =[
+  '#d60000',
+  '#018700',
+  '#b500ff',
+  '#05acc6',
+  '#97ff00',
+  '#ffa52f',
+  '#ff8ec8',
+  '#79525e',
+  '#00fdcf',
+  '#afa5ff'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>
