@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Student loan Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Student loan', 'Dealing with my lender or servicer', 17630],
+['Dealing with my lender or servicer', 'Navient Solutions, LLC.', 8562],
+['Dealing with my lender or servicer', 'AES/PHEAA', 2133],
+['Dealing with my lender or servicer', 'NELNET, INC.', 724],
+['Dealing with my lender or servicer', 'WELLS FARGO & COMPANY', 566],
+['Dealing with my lender or servicer', 'SLM CORPORATION', 554],
+['Dealing with my lender or servicer', 'ACS Education Services', 453],
+['Dealing with my lender or servicer', 'GREAT LAKES', 365],
+['Dealing with my lender or servicer', 'DISCOVER BANK', 338],
+['Dealing with my lender or servicer', 'TRANSWORLD SYSTEMS INC', 316],
+['Dealing with my lender or servicer', 'Genesis Lending', 293],
+['Student loan', 'Dealing with your lender or servicer', 13981],
+['Dealing with your lender or servicer', 'Navient Solutions, LLC.', 5933],
+['Dealing with your lender or servicer', 'AES/PHEAA', 3296],
+['Dealing with your lender or servicer', 'NELNET, INC.', 1006],
+['Dealing with your lender or servicer', 'GREAT LAKES', 403],
+['Dealing with your lender or servicer', 'DISCOVER BANK', 275],
+['Dealing with your lender or servicer', 'SLM CORPORATION', 232],
+['Dealing with your lender or servicer', 'WELLS FARGO & COMPANY', 223],
+['Dealing with your lender or servicer', 'TRANSWORLD SYSTEMS INC', 214],
+['Dealing with your lender or servicer', 'HEARTLAND PAYMENT SYSTEMS INC', 201],
+['Dealing with your lender or servicer', 'ACS Education Services', 201],
+['Student loan', "Can't repay my loan", 8726],
+["Can't repay my loan", 'Navient Solutions, LLC.', 4868],
+["Can't repay my loan", 'AES/PHEAA', 840],
+["Can't repay my loan", 'SLM CORPORATION', 377],
+["Can't repay my loan", 'WELLS FARGO & COMPANY', 303],
+["Can't repay my loan", 'JPMORGAN CHASE & CO.', 265],
+["Can't repay my loan", 'DISCOVER BANK', 201],
+["Can't repay my loan", 'NELNET, INC.', 181],
+["Can't repay my loan", 'Genesis Lending', 145],
+["Can't repay my loan", 'ACS Education Services', 138],
+["Can't repay my loan", 'GREAT LAKES', 132],
+['Student loan', 'Struggling to repay your loan', 5583],
+['Struggling to repay your loan', 'Navient Solutions, LLC.', 3396],
+['Struggling to repay your loan', 'AES/PHEAA', 657],
+['Struggling to repay your loan', 'NELNET, INC.', 263],
+['Struggling to repay your loan', 'SLM CORPORATION', 211],
+['Struggling to repay your loan', 'GREAT LAKES', 156],
+['Struggling to repay your loan', 'WELLS FARGO & COMPANY', 87],
+['Struggling to repay your loan', 'TRANSWORLD SYSTEMS INC', 70],
+['Struggling to repay your loan', 'DISCOVER BANK', 67],
+['Struggling to repay your loan', 'ACS Education Services', 33],
+['Struggling to repay your loan', 'MOHELA', 30],
+['Student loan', 'Repaying your loan', 3820],
+['Repaying your loan', 'Navient Solutions, LLC.', 1688],
+['Repaying your loan', 'AES/PHEAA', 415],
+['Repaying your loan', 'WELLS FARGO & COMPANY', 268],
+['Repaying your loan', 'CITIBANK, N.A.', 223],
+['Repaying your loan', 'DISCOVER BANK', 183],
+['Repaying your loan', 'JPMORGAN CHASE & CO.', 176],
+['Repaying your loan', 'SLM CORPORATION', 172],
+['Repaying your loan', 'ACS Education Services', 162],
+['Repaying your loan', 'KEYCORP', 126],
+['Repaying your loan', 'NELNET, INC.', 45],
+['Student loan', 'Problems when you are unable to pay', 1697],
+['Problems when you are unable to pay', 'Navient Solutions, LLC.', 755],
+['Problems when you are unable to pay', 'AES/PHEAA', 209],
+['Problems when you are unable to pay', 'JPMORGAN CHASE & CO.', 122],
+['Problems when you are unable to pay', 'WELLS FARGO & COMPANY', 118],
+['Problems when you are unable to pay', 'CITIBANK, N.A.', 78],
+['Problems when you are unable to pay', 'KEYCORP', 66],
+['Problems when you are unable to pay', 'EXPERT GLOBAL SOLUTIONS, INC.', 38],
+['Problems when you are unable to pay', 'SLM CORPORATION', 35],
+['Problems when you are unable to pay', 'DISCOVER BANK', 32],
+['Problems when you are unable to pay', 'ACS Education Services', 27],
+['Student loan', 'Getting a loan', 1081],
+['Getting a loan', 'Navient Solutions, LLC.', 350],
+['Getting a loan', 'WELLS FARGO & COMPANY', 88],
+['Getting a loan', 'SLM CORPORATION', 88],
+['Getting a loan', 'DISCOVER BANK', 62],
+['Getting a loan', 'AES/PHEAA', 55],
+['Getting a loan', 'Social Finance, Inc.', 45],
+['Getting a loan', 'Genesis Lending', 32],
+['Getting a loan', 'First Associates Loan Servicing LLC', 28],
+['Getting a loan', 'CITIBANK, N.A.', 28],
+['Getting a loan', 'CITIZENS FINANCIAL GROUP, INC.', 27],
+['Student loan', 'Incorrect information on your report', 1069],
+['Incorrect information on your report', 'Navient Solutions, LLC.', 414],
+['Incorrect information on your report', 'AES/PHEAA', 220],
+['Incorrect information on your report', 'NELNET, INC.', 162],
+['Incorrect information on your report', 'GREAT LAKES', 39],
+['Incorrect information on your report', 'CITIBANK, N.A.', 15],
+['Incorrect information on your report', 'WELLS FARGO & COMPANY', 15],
+['Incorrect information on your report', 'MOHELA', 14],
+['Incorrect information on your report', 'ACS Education Services', 13],
+['Incorrect information on your report', 'DISCOVER BANK', 12],
+['Incorrect information on your report', 'EdFinancial Services', 11],
+['Student loan', "Problem with a credit reporting company's investigation into an existing problem", 325],
+["Problem with a credit reporting company's investigation into an existing problem", 'Navient Solutions, LLC.', 99],
+["Problem with a credit reporting company's investigation into an existing problem", 'AES/PHEAA', 81],
+["Problem with a credit reporting company's investigation into an existing problem", 'NELNET, INC.', 66],
+["Problem with a credit reporting company's investigation into an existing problem", 'MOHELA', 8],
+["Problem with a credit reporting company's investigation into an existing problem", 'GREAT LAKES', 7],
+["Problem with a credit reporting company's investigation into an existing problem", 'JPMORGAN CHASE & CO.', 7],
+["Problem with a credit reporting company's investigation into an existing problem", 'ACS Education Services', 7],
+["Problem with a credit reporting company's investigation into an existing problem", 'Utah System of Higher Education', 6],
+["Problem with a credit reporting company's investigation into an existing problem", 'DISCOVER BANK', 6],
+["Problem with a credit reporting company's investigation into an existing problem", 'EQUIFAX, INC.', 3],
+['Student loan', 'Credit monitoring or identity theft protection services', 70],
+['Credit monitoring or identity theft protection services', 'AES/PHEAA', 21],
+['Credit monitoring or identity theft protection services', 'Navient Solutions, LLC.', 18],
+['Credit monitoring or identity theft protection services', 'NELNET, INC.', 6],
+['Credit monitoring or identity theft protection services', 'GREAT LAKES', 4],
+['Credit monitoring or identity theft protection services', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 2],
+['Credit monitoring or identity theft protection services', 'SLM CORPORATION', 2],
+['Credit monitoring or identity theft protection services', 'MOHELA', 2],
+['Credit monitoring or identity theft protection services', 'Experian Information Solutions Inc.', 1],
+['Credit monitoring or identity theft protection services', 'EQUIFAX, INC.', 1],
+['Credit monitoring or identity theft protection services', 'Student Loan Care, LLC', 1]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

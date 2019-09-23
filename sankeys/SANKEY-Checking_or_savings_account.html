@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Checking or savings account Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Checking or savings account', 'Managing an account', 30876],
+['Managing an account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 5134],
+['Managing an account', 'JPMORGAN CHASE & CO.', 4331],
+['Managing an account', 'WELLS FARGO & COMPANY', 3740],
+['Managing an account', 'CITIBANK, N.A.', 1494],
+['Managing an account', 'CAPITAL ONE FINANCIAL CORPORATION', 1270],
+['Managing an account', 'TD BANK US HOLDING COMPANY', 1093],
+['Managing an account', 'PNC Bank N.A.', 1031],
+['Managing an account', 'U.S. BANCORP', 1026],
+['Managing an account', 'SUNTRUST BANKS, INC.', 948],
+['Managing an account', 'UNITED SERVICES AUTOMOBILE ASSOCIATION', 804],
+['Checking or savings account', 'Closing an account', 5394],
+['Closing an account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 865],
+['Closing an account', 'JPMORGAN CHASE & CO.', 854],
+['Closing an account', 'WELLS FARGO & COMPANY', 540],
+['Closing an account', 'CITIBANK, N.A.', 315],
+['Closing an account', 'CAPITAL ONE FINANCIAL CORPORATION', 258],
+['Closing an account', 'SUNTRUST BANKS, INC.', 244],
+['Closing an account', 'U.S. BANCORP', 243],
+['Closing an account', 'PNC Bank N.A.', 169],
+['Closing an account', 'BBVA FINANCIAL CORPORATION', 126],
+['Closing an account', 'UNITED SERVICES AUTOMOBILE ASSOCIATION', 126],
+['Checking or savings account', 'Opening an account', 4593],
+['Opening an account', 'CITIBANK, N.A.', 598],
+['Opening an account', 'WELLS FARGO & COMPANY', 577],
+['Opening an account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 536],
+['Opening an account', 'JPMORGAN CHASE & CO.', 483],
+['Opening an account', 'CAPITAL ONE FINANCIAL CORPORATION', 200],
+['Opening an account', 'HSBC NORTH AMERICA HOLDINGS INC.', 183],
+['Opening an account', 'TD BANK US HOLDING COMPANY', 154],
+['Opening an account', 'U.S. BANCORP', 127],
+['Opening an account', 'BBVA FINANCIAL CORPORATION', 119],
+['Opening an account', 'CITIZENS FINANCIAL GROUP, INC.', 104],
+['Checking or savings account', 'Problem caused by your funds being low', 4086],
+['Problem caused by your funds being low', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 570],
+['Problem caused by your funds being low', 'JPMORGAN CHASE & CO.', 563],
+['Problem caused by your funds being low', 'WELLS FARGO & COMPANY', 474],
+['Problem caused by your funds being low', 'PNC Bank N.A.', 279],
+['Problem caused by your funds being low', 'TD BANK US HOLDING COMPANY', 214],
+['Problem caused by your funds being low', 'U.S. BANCORP', 213],
+['Problem caused by your funds being low', 'CITIZENS FINANCIAL GROUP, INC.', 163],
+['Problem caused by your funds being low', 'BB&T CORPORATION', 151],
+['Problem caused by your funds being low', 'REGIONS FINANCIAL CORPORATION', 146],
+['Problem caused by your funds being low', 'SUNTRUST BANKS, INC.', 141],
+['Checking or savings account', 'Problem with a lender or other company charging your account', 3785],
+['Problem with a lender or other company charging your account', 'JPMORGAN CHASE & CO.', 689],
+['Problem with a lender or other company charging your account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 674],
+['Problem with a lender or other company charging your account', 'WELLS FARGO & COMPANY', 458],
+['Problem with a lender or other company charging your account', 'TD BANK US HOLDING COMPANY', 129],
+['Problem with a lender or other company charging your account', 'CITIBANK, N.A.', 127],
+['Problem with a lender or other company charging your account', 'PNC Bank N.A.', 110],
+['Problem with a lender or other company charging your account', 'UNITED SERVICES AUTOMOBILE ASSOCIATION', 107],
+['Problem with a lender or other company charging your account', 'NAVY FEDERAL CREDIT UNION', 95],
+['Problem with a lender or other company charging your account', 'SUNTRUST BANKS, INC.', 95],
+['Problem with a lender or other company charging your account', 'U.S. BANCORP', 94],
+['Checking or savings account', 'Incorrect information on your report', 252],
+['Incorrect information on your report', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 60],
+['Incorrect information on your report', 'WELLS FARGO & COMPANY', 26],
+['Incorrect information on your report', 'JPMORGAN CHASE & CO.', 16],
+['Incorrect information on your report', 'U.S. BANCORP', 14],
+['Incorrect information on your report', 'CAPITAL ONE FINANCIAL CORPORATION', 13],
+['Incorrect information on your report', 'Fidelity National Information Services, Inc. (FNIS)', 11],
+['Incorrect information on your report', 'TD BANK US HOLDING COMPANY', 10],
+['Incorrect information on your report', 'CITIZENS FINANCIAL GROUP, INC.', 7],
+['Incorrect information on your report', 'PNC Bank N.A.', 5],
+['Incorrect information on your report', 'DISCOVER BANK', 5],
+['Checking or savings account', 'Improper use of your report', 73],
+['Improper use of your report', 'CAPITAL ONE FINANCIAL CORPORATION', 7],
+['Improper use of your report', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 5],
+['Improper use of your report', 'JPMORGAN CHASE & CO.', 5],
+['Improper use of your report', 'ALLY FINANCIAL INC.', 5],
+['Improper use of your report', 'U.S. BANCORP', 4],
+['Improper use of your report', 'SYNCHRONY FINANCIAL', 4],
+['Improper use of your report', 'CITIZENS FINANCIAL GROUP, INC.', 4],
+['Improper use of your report', 'CHARLES SCHWAB CORPORATION, THE', 3],
+['Improper use of your report', 'PENTAGON FEDERAL CREDIT UNION', 2],
+['Improper use of your report', 'TD BANK US HOLDING COMPANY', 2],
+['Checking or savings account', "Problem with a credit reporting company's investigation into an existing problem", 30],
+["Problem with a credit reporting company's investigation into an existing problem", 'BANK OF AMERICA, NATIONAL ASSOCIATION', 7],
+["Problem with a credit reporting company's investigation into an existing problem", 'NAVY FEDERAL CREDIT UNION', 3],
+["Problem with a credit reporting company's investigation into an existing problem", 'JPMORGAN CHASE & CO.', 3],
+["Problem with a credit reporting company's investigation into an existing problem", 'U.S. BANCORP', 3],
+["Problem with a credit reporting company's investigation into an existing problem", 'FIFTH THIRD FINANCIAL CORPORATION', 2],
+["Problem with a credit reporting company's investigation into an existing problem", 'WELLS FARGO & COMPANY', 2],
+["Problem with a credit reporting company's investigation into an existing problem", 'EARLY WARNING SERVICES, LLC', 2],
+["Problem with a credit reporting company's investigation into an existing problem", 'CIT BANK, NATIONAL ASSOCIATION', 1],
+["Problem with a credit reporting company's investigation into an existing problem", 'BMO HARRIS BANK NATIONAL ASSOCIATION', 1],
+["Problem with a credit reporting company's investigation into an existing problem", 'FIRSTBANK', 1],
+['Checking or savings account', 'Problem with fraud alerts or security freezes', 24],
+['Problem with fraud alerts or security freezes', 'WELLS FARGO & COMPANY', 4],
+['Problem with fraud alerts or security freezes', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 4],
+['Problem with fraud alerts or security freezes', 'CAPITAL ONE FINANCIAL CORPORATION', 2],
+['Problem with fraud alerts or security freezes', 'SUNTRUST BANKS, INC.', 2],
+['Problem with fraud alerts or security freezes', 'JPMORGAN CHASE & CO.', 2],
+['Problem with fraud alerts or security freezes', 'EARLY WARNING SERVICES, LLC', 1],
+['Problem with fraud alerts or security freezes', 'PNC Bank N.A.', 1],
+['Problem with fraud alerts or security freezes', 'Fidelity National Information Services, Inc. (FNIS)', 1],
+['Problem with fraud alerts or security freezes', 'INVESTORS BANK', 1],
+['Problem with fraud alerts or security freezes', 'Certegy Holdings, LLC', 1],
+['Checking or savings account', 'Credit monitoring or identity theft protection services', 12],
+['Credit monitoring or identity theft protection services', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 5],
+['Credit monitoring or identity theft protection services', 'JPMORGAN CHASE & CO.', 2],
+['Credit monitoring or identity theft protection services', 'Fidelity National Information Services, Inc. (FNIS)', 1],
+['Credit monitoring or identity theft protection services', 'WELLS FARGO & COMPANY', 1],
+['Credit monitoring or identity theft protection services', 'U.S. BANCORP', 1],
+['Credit monitoring or identity theft protection services', 'PNC Bank N.A.', 1],
+['Credit monitoring or identity theft protection services', 'FIFTH THIRD FINANCIAL CORPORATION', 1]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

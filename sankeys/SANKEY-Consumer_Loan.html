@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Consumer Loan Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Consumer Loan', 'Managing the loan or lease', 15283],
+['Managing the loan or lease', 'SANTANDER CONSUMER USA HOLDINGS INC.', 1463],
+['Managing the loan or lease', 'WELLS FARGO & COMPANY', 1334],
+['Managing the loan or lease', 'ALLY FINANCIAL INC.', 1291],
+['Managing the loan or lease', 'CAPITAL ONE FINANCIAL CORPORATION', 610],
+['Managing the loan or lease', 'JPMORGAN CHASE & CO.', 503],
+['Managing the loan or lease', 'TOYOTA MOTOR CREDIT CORPORATION', 460],
+['Managing the loan or lease', 'SYNCHRONY FINANCIAL', 349],
+['Managing the loan or lease', 'U.S. BANCORP', 338],
+['Managing the loan or lease', 'NISSAN MOTOR ACCEPTANCE CORPORATION', 313],
+['Managing the loan or lease', 'CITIBANK, N.A.', 311],
+['Consumer Loan', 'Problems when you are unable to pay', 7688],
+['Problems when you are unable to pay', 'SANTANDER CONSUMER USA HOLDINGS INC.', 575],
+['Problems when you are unable to pay', 'WELLS FARGO & COMPANY', 515],
+['Problems when you are unable to pay', 'ALLY FINANCIAL INC.', 423],
+['Problems when you are unable to pay', 'CAPITAL ONE FINANCIAL CORPORATION', 289],
+['Problems when you are unable to pay', 'JPMORGAN CHASE & CO.', 212],
+['Problems when you are unable to pay', 'GENERAL MOTORS FINANCIAL COMPANY, INC.', 205],
+['Problems when you are unable to pay', 'CITIBANK, N.A.', 184],
+['Problems when you are unable to pay', 'CREDIT ACCEPTANCE CORPORATION', 171],
+['Problems when you are unable to pay', 'AMERICAN HONDA FINANCE CORP', 159],
+['Problems when you are unable to pay', 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 158],
+['Consumer Loan', 'Taking out the loan or lease', 4371],
+['Taking out the loan or lease', 'SANTANDER CONSUMER USA HOLDINGS INC.', 367],
+['Taking out the loan or lease', 'WELLS FARGO & COMPANY', 284],
+['Taking out the loan or lease', 'ALLY FINANCIAL INC.', 255],
+['Taking out the loan or lease', 'CAPITAL ONE FINANCIAL CORPORATION', 171],
+['Taking out the loan or lease', 'JPMORGAN CHASE & CO.', 150],
+['Taking out the loan or lease', 'TOYOTA MOTOR CREDIT CORPORATION', 121],
+['Taking out the loan or lease', 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 113],
+['Taking out the loan or lease', 'SYNCHRONY FINANCIAL', 99],
+['Taking out the loan or lease', 'AMERICAN HONDA FINANCE CORP', 93],
+['Taking out the loan or lease', 'U.S. BANCORP', 85],
+['Consumer Loan', 'Shopping for a loan or lease', 2029],
+['Shopping for a loan or lease', 'SANTANDER CONSUMER USA HOLDINGS INC.', 129],
+['Shopping for a loan or lease', 'WELLS FARGO & COMPANY', 124],
+['Shopping for a loan or lease', 'ALLY FINANCIAL INC.', 121],
+['Shopping for a loan or lease', 'CAPITAL ONE FINANCIAL CORPORATION', 106],
+['Shopping for a loan or lease', 'JPMORGAN CHASE & CO.', 92],
+['Shopping for a loan or lease', 'AMERICAN HONDA FINANCE CORP', 72],
+['Shopping for a loan or lease', 'TOYOTA MOTOR CREDIT CORPORATION', 67],
+['Shopping for a loan or lease', 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 49],
+['Shopping for a loan or lease', 'GENERAL MOTORS FINANCIAL COMPANY, INC.', 44],
+['Shopping for a loan or lease', 'NISSAN MOTOR ACCEPTANCE CORPORATION', 41],
+['Consumer Loan', 'Managing the line of credit', 806],
+['Managing the line of credit', 'WELLS FARGO & COMPANY', 133],
+['Managing the line of credit', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 78],
+['Managing the line of credit', 'CITIBANK, N.A.', 73],
+['Managing the line of credit', 'SYNCHRONY FINANCIAL', 40],
+['Managing the line of credit', 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 37],
+['Managing the line of credit', 'PAYPAL HOLDINGS INC.', 33],
+['Managing the line of credit', 'PNC Bank N.A.', 28],
+['Managing the line of credit', 'JPMORGAN CHASE & CO.', 27],
+['Managing the line of credit', 'HSBC NORTH AMERICA HOLDINGS INC.', 25],
+['Managing the line of credit', 'SANTANDER BANK, NATIONAL ASSOCIATION', 25],
+['Consumer Loan', 'Account terms and changes', 484],
+['Account terms and changes', 'WELLS FARGO & COMPANY', 59],
+['Account terms and changes', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 57],
+['Account terms and changes', 'CITIBANK, N.A.', 43],
+['Account terms and changes', 'SYNCHRONY FINANCIAL', 28],
+['Account terms and changes', 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 22],
+['Account terms and changes', 'PNC Bank N.A.', 20],
+['Account terms and changes', 'JPMORGAN CHASE & CO.', 18],
+['Account terms and changes', 'HSBC NORTH AMERICA HOLDINGS INC.', 18],
+['Account terms and changes', 'U.S. BANCORP', 17],
+['Account terms and changes', 'CASHCALL, INC.', 14],
+['Consumer Loan', 'Shopping for a line of credit', 302],
+['Shopping for a line of credit', 'WELLS FARGO & COMPANY', 60],
+['Shopping for a line of credit', 'CITIBANK, N.A.', 25],
+['Shopping for a line of credit', 'SYNCHRONY FINANCIAL', 18],
+['Shopping for a line of credit', 'JPMORGAN CHASE & CO.', 16],
+['Shopping for a line of credit', 'PNC Bank N.A.', 16],
+['Shopping for a line of credit', 'CAPITAL ONE FINANCIAL CORPORATION', 11],
+['Shopping for a line of credit', 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 9],
+['Shopping for a line of credit', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 9],
+['Shopping for a line of credit', 'DISCOVER BANK', 8],
+['Shopping for a line of credit', 'NAVY FEDERAL CREDIT UNION', 7],
+['Consumer Loan', "Charged fees or interest I didn't expect", 292],
+["Charged fees or interest I didn't expect", 'TMX Finance LLC', 82],
+["Charged fees or interest I didn't expect", 'Select Management Resources, LLC', 36],
+["Charged fees or interest I didn't expect", 'WHEELS FINANCIAL GROUP, LLC.', 18],
+["Charged fees or interest I didn't expect", 'Westlake Services, LLC', 16],
+["Charged fees or interest I didn't expect", 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 11],
+["Charged fees or interest I didn't expect", 'WELLS FARGO & COMPANY', 10],
+["Charged fees or interest I didn't expect", 'CITIBANK, N.A.', 9],
+["Charged fees or interest I didn't expect", 'CURO Intermediate Holdings', 7],
+["Charged fees or interest I didn't expect", 'CHECK INTO CASH INC.', 7],
+["Charged fees or interest I didn't expect", 'Maximum Title Loans, LLC', 5],
+['Consumer Loan', "Can't contact lender", 90],
+["Can't contact lender", 'TMX Finance LLC', 12],
+["Can't contact lender", 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 6],
+["Can't contact lender", 'Select Management Resources, LLC', 5],
+["Can't contact lender", 'CITIBANK, N.A.', 5],
+["Can't contact lender", 'Westlake Services, LLC', 4],
+["Can't contact lender", 'MARINER FINANCE, LLC', 3],
+["Can't contact lender", 'JPMORGAN CHASE & CO.', 3],
+["Can't contact lender", 'COMMUNITY CHOICE FINANCIAL, INC.', 3],
+["Can't contact lender", 'Advantage One Credit, LLC', 3],
+["Can't contact lender", 'WHEELS FINANCIAL GROUP, LLC.', 3],
+['Consumer Loan', 'Lender repossessed or sold the vehicle', 79],
+['Lender repossessed or sold the vehicle', 'TMX Finance LLC', 24],
+['Lender repossessed or sold the vehicle', 'Select Management Resources, LLC', 10],
+['Lender repossessed or sold the vehicle', 'CHECK INTO CASH INC.', 5],
+['Lender repossessed or sold the vehicle', 'WHEELS FINANCIAL GROUP, LLC.', 4],
+['Lender repossessed or sold the vehicle', 'Westlake Services, LLC', 4],
+['Lender repossessed or sold the vehicle', 'Main Street Personal Finance', 2],
+['Lender repossessed or sold the vehicle', 'Rapid Auto Loans LLC', 2],
+['Lender repossessed or sold the vehicle', 'ONEMAIN FINANCIAL HOLDINGS, LLC.', 2],
+['Lender repossessed or sold the vehicle', '3rd Generation, Inc.', 2],
+['Lender repossessed or sold the vehicle', 'WORLD ACCEPTANCE CORPORATION', 2]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

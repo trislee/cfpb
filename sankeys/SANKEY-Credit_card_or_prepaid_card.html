@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Credit card or prepaid card Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Credit card or prepaid card', 'Problem with a purchase shown on your statement', 13811],
+['Problem with a purchase shown on your statement', 'CITIBANK, N.A.', 2505],
+['Problem with a purchase shown on your statement', 'JPMORGAN CHASE & CO.', 2092],
+['Problem with a purchase shown on your statement', 'CAPITAL ONE FINANCIAL CORPORATION', 1561],
+['Problem with a purchase shown on your statement', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1440],
+['Problem with a purchase shown on your statement', 'SYNCHRONY FINANCIAL', 911],
+['Problem with a purchase shown on your statement', 'AMERICAN EXPRESS COMPANY', 876],
+['Problem with a purchase shown on your statement', 'DISCOVER BANK', 817],
+['Problem with a purchase shown on your statement', 'Alliance Data Card Services', 541],
+['Problem with a purchase shown on your statement', 'BARCLAYS BANK DELAWARE', 539],
+['Problem with a purchase shown on your statement', 'WELLS FARGO & COMPANY', 507],
+['Credit card or prepaid card', 'Other features, terms, or problems', 7418],
+['Other features, terms, or problems', 'CITIBANK, N.A.', 1144],
+['Other features, terms, or problems', 'AMERICAN EXPRESS COMPANY', 1088],
+['Other features, terms, or problems', 'CAPITAL ONE FINANCIAL CORPORATION', 1003],
+['Other features, terms, or problems', 'JPMORGAN CHASE & CO.', 841],
+['Other features, terms, or problems', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 566],
+['Other features, terms, or problems', 'SYNCHRONY FINANCIAL', 558],
+['Other features, terms, or problems', 'BARCLAYS BANK DELAWARE', 363],
+['Other features, terms, or problems', 'WELLS FARGO & COMPANY', 317],
+['Other features, terms, or problems', 'DISCOVER BANK', 308],
+['Other features, terms, or problems', 'Alliance Data Card Services', 266],
+['Credit card or prepaid card', 'Fees or interest', 7405],
+['Fees or interest', 'CITIBANK, N.A.', 1236],
+['Fees or interest', 'CAPITAL ONE FINANCIAL CORPORATION', 1092],
+['Fees or interest', 'SYNCHRONY FINANCIAL', 813],
+['Fees or interest', 'Alliance Data Card Services', 802],
+['Fees or interest', 'JPMORGAN CHASE & CO.', 653],
+['Fees or interest', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 569],
+['Fees or interest', 'AMERICAN EXPRESS COMPANY', 417],
+['Fees or interest', 'WELLS FARGO & COMPANY', 299],
+['Fees or interest', 'BARCLAYS BANK DELAWARE', 292],
+['Fees or interest', 'DISCOVER BANK', 210],
+['Credit card or prepaid card', 'Getting a credit card', 5525],
+['Getting a credit card', 'CAPITAL ONE FINANCIAL CORPORATION', 786],
+['Getting a credit card', 'CITIBANK, N.A.', 681],
+['Getting a credit card', 'SYNCHRONY FINANCIAL', 653],
+['Getting a credit card', 'JPMORGAN CHASE & CO.', 641],
+['Getting a credit card', 'WELLS FARGO & COMPANY', 331],
+['Getting a credit card', 'Alliance Data Card Services', 301],
+['Getting a credit card', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 299],
+['Getting a credit card', 'BARCLAYS BANK DELAWARE', 273],
+['Getting a credit card', 'AMERICAN EXPRESS COMPANY', 244],
+['Getting a credit card', 'DISCOVER BANK', 235],
+['Credit card or prepaid card', 'Problem when making payments', 5401],
+['Problem when making payments', 'CAPITAL ONE FINANCIAL CORPORATION', 973],
+['Problem when making payments', 'CITIBANK, N.A.', 831],
+['Problem when making payments', 'SYNCHRONY FINANCIAL', 649],
+['Problem when making payments', 'Alliance Data Card Services', 412],
+['Problem when making payments', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 401],
+['Problem when making payments', 'JPMORGAN CHASE & CO.', 289],
+['Problem when making payments', 'WELLS FARGO & COMPANY', 255],
+['Problem when making payments', 'AMERICAN EXPRESS COMPANY', 191],
+['Problem when making payments', 'DISCOVER BANK', 191],
+['Problem when making payments', 'BARCLAYS BANK DELAWARE', 172],
+['Credit card or prepaid card', 'Closing your account', 4354],
+['Closing your account', 'JPMORGAN CHASE & CO.', 695],
+['Closing your account', 'CAPITAL ONE FINANCIAL CORPORATION', 643],
+['Closing your account', 'CITIBANK, N.A.', 638],
+['Closing your account', 'SYNCHRONY FINANCIAL', 542],
+['Closing your account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 382],
+['Closing your account', 'Alliance Data Card Services', 229],
+['Closing your account', 'AMERICAN EXPRESS COMPANY', 209],
+['Closing your account', 'DISCOVER BANK', 185],
+['Closing your account', 'WELLS FARGO & COMPANY', 174],
+['Closing your account', 'BARCLAYS BANK DELAWARE', 126],
+['Credit card or prepaid card', 'Advertising and marketing, including promotional offers', 3541],
+['Advertising and marketing, including promotional offers', 'AMERICAN EXPRESS COMPANY', 826],
+['Advertising and marketing, including promotional offers', 'CITIBANK, N.A.', 571],
+['Advertising and marketing, including promotional offers', 'JPMORGAN CHASE & CO.', 375],
+['Advertising and marketing, including promotional offers', 'SYNCHRONY FINANCIAL', 338],
+['Advertising and marketing, including promotional offers', 'CAPITAL ONE FINANCIAL CORPORATION', 285],
+['Advertising and marketing, including promotional offers', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 191],
+['Advertising and marketing, including promotional offers', 'Alliance Data Card Services', 158],
+['Advertising and marketing, including promotional offers', 'BARCLAYS BANK DELAWARE', 137],
+['Advertising and marketing, including promotional offers', 'WELLS FARGO & COMPANY', 124],
+['Advertising and marketing, including promotional offers', 'U.S. BANCORP', 109],
+['Credit card or prepaid card', 'Trouble using your card', 2161],
+['Trouble using your card', 'CAPITAL ONE FINANCIAL CORPORATION', 361],
+['Trouble using your card', 'CITIBANK, N.A.', 354],
+['Trouble using your card', 'SYNCHRONY FINANCIAL', 342],
+['Trouble using your card', 'AMERICAN EXPRESS COMPANY', 149],
+['Trouble using your card', 'JPMORGAN CHASE & CO.', 141],
+['Trouble using your card', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 132],
+['Trouble using your card', 'Alliance Data Card Services', 120],
+['Trouble using your card', 'BARCLAYS BANK DELAWARE', 79],
+['Trouble using your card', 'DISCOVER BANK', 77],
+['Trouble using your card', 'WELLS FARGO & COMPANY', 64],
+['Credit card or prepaid card', 'Incorrect information on your report', 2044],
+['Incorrect information on your report', 'CAPITAL ONE FINANCIAL CORPORATION', 417],
+['Incorrect information on your report', 'CITIBANK, N.A.', 269],
+['Incorrect information on your report', 'SYNCHRONY FINANCIAL', 236],
+['Incorrect information on your report', 'JPMORGAN CHASE & CO.', 160],
+['Incorrect information on your report', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 122],
+['Incorrect information on your report', 'Alliance Data Card Services', 111],
+['Incorrect information on your report', 'DISCOVER BANK', 109],
+['Incorrect information on your report', 'WELLS FARGO & COMPANY', 98],
+['Incorrect information on your report', 'AMERICAN EXPRESS COMPANY', 77],
+['Incorrect information on your report', 'BARCLAYS BANK DELAWARE', 70],
+['Credit card or prepaid card', 'Struggling to pay your bill', 1337],
+['Struggling to pay your bill', 'CAPITAL ONE FINANCIAL CORPORATION', 326],
+['Struggling to pay your bill', 'SYNCHRONY FINANCIAL', 136],
+['Struggling to pay your bill', 'CITIBANK, N.A.', 127],
+['Struggling to pay your bill', 'Alliance Data Card Services', 117],
+['Struggling to pay your bill', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 94],
+['Struggling to pay your bill', 'JPMORGAN CHASE & CO.', 91],
+['Struggling to pay your bill', 'DISCOVER BANK', 75],
+['Struggling to pay your bill', 'AMERICAN EXPRESS COMPANY', 61],
+['Struggling to pay your bill', 'WELLS FARGO & COMPANY', 56],
+['Struggling to pay your bill', 'BARCLAYS BANK DELAWARE', 43]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

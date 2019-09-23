@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Credit reporting Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Credit reporting', 'Incorrect information on credit report', 102686],
+['Incorrect information on credit report', 'EQUIFAX, INC.', 34468],
+['Incorrect information on credit report', 'Experian Information Solutions Inc.', 32486],
+['Incorrect information on credit report', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 30325],
+['Incorrect information on credit report', 'Fidelity National Information Services, Inc. (FNIS)', 622],
+['Incorrect information on credit report', 'CAPITAL ONE FINANCIAL CORPORATION', 288],
+['Incorrect information on credit report', 'Credit Karma, Inc.', 284],
+['Incorrect information on credit report', 'CITIBANK, N.A.', 218],
+['Incorrect information on credit report', 'LEXISNEXIS', 184],
+['Incorrect information on credit report', 'CORELOGIC INC', 175],
+['Incorrect information on credit report', 'JPMORGAN CHASE & CO.', 161],
+['Credit reporting', "Credit reporting company's investigation", 16883],
+["Credit reporting company's investigation", 'EQUIFAX, INC.', 6171],
+["Credit reporting company's investigation", 'Experian Information Solutions Inc.', 5920],
+["Credit reporting company's investigation", 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 4253],
+["Credit reporting company's investigation", 'Fidelity National Information Services, Inc. (FNIS)', 97],
+["Credit reporting company's investigation", 'LEXISNEXIS', 31],
+["Credit reporting company's investigation", 'CAPITAL ONE FINANCIAL CORPORATION', 27],
+["Credit reporting company's investigation", 'EARLY WARNING SERVICES, LLC', 23],
+["Credit reporting company's investigation", 'CORELOGIC INC', 18],
+["Credit reporting company's investigation", 'FIRST ADVANTAGE CORPORATION', 15],
+["Credit reporting company's investigation", 'Innovis', 12],
+['Credit reporting', 'Unable to get credit report/credit score', 10859],
+['Unable to get credit report/credit score', 'EQUIFAX, INC.', 4451],
+['Unable to get credit report/credit score', 'Experian Information Solutions Inc.', 3482],
+['Unable to get credit report/credit score', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 2602],
+['Unable to get credit report/credit score', 'Credit Karma, Inc.', 82],
+['Unable to get credit report/credit score', 'LEXISNEXIS', 55],
+['Unable to get credit report/credit score', 'Fidelity National Information Services, Inc. (FNIS)', 49],
+['Unable to get credit report/credit score', 'Innovis', 18],
+['Unable to get credit report/credit score', 'CORELOGIC INC', 16],
+['Unable to get credit report/credit score', 'EARLY WARNING SERVICES, LLC', 14],
+['Unable to get credit report/credit score', 'ID Analytics, Inc.', 11],
+['Credit reporting', 'Improper use of my credit report', 5580],
+['Improper use of my credit report', 'Experian Information Solutions Inc.', 1800],
+['Improper use of my credit report', 'EQUIFAX, INC.', 1665],
+['Improper use of my credit report', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 1478],
+['Improper use of my credit report', 'CORELOGIC INC', 97],
+['Improper use of my credit report', 'Clarity Services', 45],
+['Improper use of my credit report', 'Innovis', 35],
+['Improper use of my credit report', 'CAPITAL ONE FINANCIAL CORPORATION', 33],
+['Improper use of my credit report', 'Fidelity National Information Services, Inc. (FNIS)', 33],
+['Improper use of my credit report', 'LEXISNEXIS', 26],
+['Improper use of my credit report', 'CITIBANK, N.A.', 20],
+['Credit reporting', 'Credit monitoring or identity protection', 4424],
+['Credit monitoring or identity protection', 'Experian Information Solutions Inc.', 1690],
+['Credit monitoring or identity protection', 'EQUIFAX, INC.', 1373],
+['Credit monitoring or identity protection', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 1163],
+['Credit monitoring or identity protection', 'Fidelity National Information Services, Inc. (FNIS)', 30],
+['Credit monitoring or identity protection', 'CITIBANK, N.A.', 17],
+['Credit monitoring or identity protection', 'Credit Karma, Inc.', 14],
+['Credit monitoring or identity protection', 'CAPITAL ONE FINANCIAL CORPORATION', 9],
+['Credit monitoring or identity protection', 'LEXISNEXIS', 9],
+['Credit monitoring or identity protection', 'JPMORGAN CHASE & CO.', 8],
+['Credit monitoring or identity protection', 'First Data Corporation', 8]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Bank account or service Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Bank account or service', 'Account opening, closing, or management', 37961],
+['Account opening, closing, or management', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 5860],
+['Account opening, closing, or management', 'WELLS FARGO & COMPANY', 5728],
+['Account opening, closing, or management', 'JPMORGAN CHASE & CO.', 3879],
+['Account opening, closing, or management', 'CITIBANK, N.A.', 2971],
+['Account opening, closing, or management', 'U.S. BANCORP', 1595],
+['Account opening, closing, or management', 'PNC Bank N.A.', 1390],
+['Account opening, closing, or management', 'CAPITAL ONE FINANCIAL CORPORATION', 1221],
+['Account opening, closing, or management', 'SUNTRUST BANKS, INC.', 1046],
+['Account opening, closing, or management', 'TD BANK US HOLDING COMPANY', 944],
+['Account opening, closing, or management', 'CITIZENS FINANCIAL GROUP, INC.', 776],
+['Bank account or service', 'Deposits and withdrawals', 22851],
+['Deposits and withdrawals', 'WELLS FARGO & COMPANY', 3870],
+['Deposits and withdrawals', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 3754],
+['Deposits and withdrawals', 'JPMORGAN CHASE & CO.', 3111],
+['Deposits and withdrawals', 'U.S. BANCORP', 983],
+['Deposits and withdrawals', 'PNC Bank N.A.', 942],
+['Deposits and withdrawals', 'TD BANK US HOLDING COMPANY', 828],
+['Deposits and withdrawals', 'CITIBANK, N.A.', 739],
+['Deposits and withdrawals', 'SUNTRUST BANKS, INC.', 698],
+['Deposits and withdrawals', 'CAPITAL ONE FINANCIAL CORPORATION', 628],
+['Deposits and withdrawals', 'UNITED SERVICES AUTOMOBILE ASSOCIATION', 546],
+['Bank account or service', 'Problems caused by my funds being low', 11845],
+['Problems caused by my funds being low', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1956],
+['Problems caused by my funds being low', 'WELLS FARGO & COMPANY', 1827],
+['Problems caused by my funds being low', 'JPMORGAN CHASE & CO.', 1033],
+['Problems caused by my funds being low', 'TD BANK US HOLDING COMPANY', 796],
+['Problems caused by my funds being low', 'PNC Bank N.A.', 695],
+['Problems caused by my funds being low', 'U.S. BANCORP', 638],
+['Problems caused by my funds being low', 'CITIZENS FINANCIAL GROUP, INC.', 528],
+['Problems caused by my funds being low', 'REGIONS FINANCIAL CORPORATION', 502],
+['Problems caused by my funds being low', 'SUNTRUST BANKS, INC.', 458],
+['Problems caused by my funds being low', 'BB&T CORPORATION', 414],
+['Bank account or service', 'Making/receiving payments, sending money', 7404],
+['Making/receiving payments, sending money', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1242],
+['Making/receiving payments, sending money', 'WELLS FARGO & COMPANY', 1116],
+['Making/receiving payments, sending money', 'JPMORGAN CHASE & CO.', 920],
+['Making/receiving payments, sending money', 'CITIBANK, N.A.', 344],
+['Making/receiving payments, sending money', 'U.S. BANCORP', 266],
+['Making/receiving payments, sending money', 'CAPITAL ONE FINANCIAL CORPORATION', 264],
+['Making/receiving payments, sending money', 'PAYPAL HOLDINGS INC.', 242],
+['Making/receiving payments, sending money', 'PNC Bank N.A.', 232],
+['Making/receiving payments, sending money', 'TD BANK US HOLDING COMPANY', 197],
+['Making/receiving payments, sending money', 'SUNTRUST BANKS, INC.', 177],
+['Bank account or service', 'Using a debit or ATM card', 6145],
+['Using a debit or ATM card', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1105],
+['Using a debit or ATM card', 'JPMORGAN CHASE & CO.', 873],
+['Using a debit or ATM card', 'WELLS FARGO & COMPANY', 792],
+['Using a debit or ATM card', 'TD BANK US HOLDING COMPANY', 295],
+['Using a debit or ATM card', 'CITIBANK, N.A.', 247],
+['Using a debit or ATM card', 'U.S. BANCORP', 244],
+['Using a debit or ATM card', 'PNC Bank N.A.', 231],
+['Using a debit or ATM card', 'SUNTRUST BANKS, INC.', 180],
+['Using a debit or ATM card', 'Comerica', 175],
+['Using a debit or ATM card', 'CAPITAL ONE FINANCIAL CORPORATION', 147]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Mortgage Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Mortgage', 'Loan modification,collection,foreclosure', 112310],
+['Loan modification,collection,foreclosure', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 25075],
+['Loan modification,collection,foreclosure', 'WELLS FARGO & COMPANY', 17355],
+['Loan modification,collection,foreclosure', 'OCWEN FINANCIAL CORPORATION', 11075],
+['Loan modification,collection,foreclosure', 'JPMORGAN CHASE & CO.', 9743],
+['Loan modification,collection,foreclosure', 'NATIONSTAR MORTGAGE', 7351],
+['Loan modification,collection,foreclosure', 'CITIBANK, N.A.', 4706],
+['Loan modification,collection,foreclosure', 'Ditech Financial LLC', 3787],
+['Loan modification,collection,foreclosure', 'SELECT PORTFOLIO SERVICING, INC.', 3499],
+['Loan modification,collection,foreclosure', 'U.S. BANCORP', 2297],
+['Loan modification,collection,foreclosure', 'HSBC NORTH AMERICA HOLDINGS INC.', 2067],
+['Mortgage', 'Loan servicing, payments, escrow account', 77333],
+['Loan servicing, payments, escrow account', 'OCWEN FINANCIAL CORPORATION', 9652],
+['Loan servicing, payments, escrow account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 9303],
+['Loan servicing, payments, escrow account', 'WELLS FARGO & COMPANY', 8032],
+['Loan servicing, payments, escrow account', 'NATIONSTAR MORTGAGE', 6739],
+['Loan servicing, payments, escrow account', 'Ditech Financial LLC', 5918],
+['Loan servicing, payments, escrow account', 'JPMORGAN CHASE & CO.', 5360],
+['Loan servicing, payments, escrow account', 'CITIBANK, N.A.', 2619],
+['Loan servicing, payments, escrow account', 'Seterus, Inc.', 1764],
+['Loan servicing, payments, escrow account', 'HSBC NORTH AMERICA HOLDINGS INC.', 1601],
+['Loan servicing, payments, escrow account', 'U.S. BANCORP', 1531],
+['Mortgage', 'Trouble during payment process', 27280],
+['Trouble during payment process', 'WELLS FARGO & COMPANY', 2769],
+['Trouble during payment process', 'NATIONSTAR MORTGAGE', 2150],
+['Trouble during payment process', 'Ditech Financial LLC', 1535],
+['Trouble during payment process', 'OCWEN FINANCIAL CORPORATION', 1446],
+['Trouble during payment process', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1273],
+['Trouble during payment process', 'JPMORGAN CHASE & CO.', 1158],
+['Trouble during payment process', 'LoanCare, LLC', 1055],
+['Trouble during payment process', 'SELECT PORTFOLIO SERVICING, INC.', 908],
+['Trouble during payment process', 'Specialized Loan Servicing LLC', 798],
+['Trouble during payment process', 'FREEDOM MORTGAGE COMPANY', 722],
+['Mortgage', 'Struggling to pay mortgage', 21128],
+['Struggling to pay mortgage', 'WELLS FARGO & COMPANY', 2869],
+['Struggling to pay mortgage', 'OCWEN FINANCIAL CORPORATION', 1828],
+['Struggling to pay mortgage', 'NATIONSTAR MORTGAGE', 1786],
+['Struggling to pay mortgage', 'SELECT PORTFOLIO SERVICING, INC.', 1549],
+['Struggling to pay mortgage', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1296],
+['Struggling to pay mortgage', 'JPMORGAN CHASE & CO.', 1251],
+['Struggling to pay mortgage', 'Ditech Financial LLC', 751],
+['Struggling to pay mortgage', 'BAYVIEW LOAN SERVICING, LLC', 590],
+['Struggling to pay mortgage', 'Specialized Loan Servicing LLC', 581],
+['Struggling to pay mortgage', 'Shellpoint Partners, LLC', 571],
+['Mortgage', 'Application, originator, mortgage broker', 17229],
+['Application, originator, mortgage broker', 'WELLS FARGO & COMPANY', 2565],
+['Application, originator, mortgage broker', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 2518],
+['Application, originator, mortgage broker', 'JPMORGAN CHASE & CO.', 1486],
+['Application, originator, mortgage broker', 'CITIBANK, N.A.', 704],
+['Application, originator, mortgage broker', 'OCWEN FINANCIAL CORPORATION', 689],
+['Application, originator, mortgage broker', 'QUICKEN LOANS, INC.', 640],
+['Application, originator, mortgage broker', 'NATIONSTAR MORTGAGE', 597],
+['Application, originator, mortgage broker', 'U.S. BANCORP', 402],
+['Application, originator, mortgage broker', 'Ditech Financial LLC', 350],
+['Application, originator, mortgage broker', 'PNC Bank N.A.', 302],
+['Mortgage', 'Settlement process and costs', 8940],
+['Settlement process and costs', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1348],
+['Settlement process and costs', 'WELLS FARGO & COMPANY', 1087],
+['Settlement process and costs', 'OCWEN FINANCIAL CORPORATION', 795],
+['Settlement process and costs', 'JPMORGAN CHASE & CO.', 787],
+['Settlement process and costs', 'NATIONSTAR MORTGAGE', 504],
+['Settlement process and costs', 'CITIBANK, N.A.', 308],
+['Settlement process and costs', 'Ditech Financial LLC', 286],
+['Settlement process and costs', 'U.S. BANCORP', 182],
+['Settlement process and costs', 'SELECT PORTFOLIO SERVICING, INC.', 180],
+['Settlement process and costs', 'PNC Bank N.A.', 157],
+['Mortgage', 'Credit decision / Underwriting', 5652],
+['Credit decision / Underwriting', 'WELLS FARGO & COMPANY', 862],
+['Credit decision / Underwriting', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 820],
+['Credit decision / Underwriting', 'JPMORGAN CHASE & CO.', 543],
+['Credit decision / Underwriting', 'OCWEN FINANCIAL CORPORATION', 323],
+['Credit decision / Underwriting', 'CITIBANK, N.A.', 263],
+['Credit decision / Underwriting', 'NATIONSTAR MORTGAGE', 243],
+['Credit decision / Underwriting', 'Ditech Financial LLC', 146],
+['Credit decision / Underwriting', 'QUICKEN LOANS, INC.', 124],
+['Credit decision / Underwriting', 'U.S. BANCORP', 119],
+['Credit decision / Underwriting', 'PNC Bank N.A.', 110],
+['Mortgage', 'Other', 5425],
+['Other', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 923],
+['Other', 'OCWEN FINANCIAL CORPORATION', 807],
+['Other', 'WELLS FARGO & COMPANY', 721],
+['Other', 'JPMORGAN CHASE & CO.', 419],
+['Other', 'NATIONSTAR MORTGAGE', 385],
+['Other', 'SELECT PORTFOLIO SERVICING, INC.', 260],
+['Other', 'HSBC NORTH AMERICA HOLDINGS INC.', 159],
+['Other', 'Ditech Financial LLC', 155],
+['Other', 'CITIBANK, N.A.', 148],
+['Other', 'Seterus, Inc.', 112],
+['Mortgage', 'Applying for a mortgage or refinancing an existing mortgage', 5004],
+['Applying for a mortgage or refinancing an existing mortgage', 'WELLS FARGO & COMPANY', 558],
+['Applying for a mortgage or refinancing an existing mortgage', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 335],
+['Applying for a mortgage or refinancing an existing mortgage', 'QUICKEN LOANS, INC.', 270],
+['Applying for a mortgage or refinancing an existing mortgage', 'JPMORGAN CHASE & CO.', 261],
+['Applying for a mortgage or refinancing an existing mortgage', 'NATIONSTAR MORTGAGE', 170],
+['Applying for a mortgage or refinancing an existing mortgage', 'OCWEN FINANCIAL CORPORATION', 132],
+['Applying for a mortgage or refinancing an existing mortgage', 'Ditech Financial LLC', 124],
+['Applying for a mortgage or refinancing an existing mortgage', 'LD Holdings Group, LLC', 121],
+['Applying for a mortgage or refinancing an existing mortgage', 'U.S. BANCORP', 105],
+['Applying for a mortgage or refinancing an existing mortgage', 'PNC Bank N.A.', 99],
+['Mortgage', 'Closing on a mortgage', 4143],
+['Closing on a mortgage', 'WELLS FARGO & COMPANY', 377],
+['Closing on a mortgage', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 238],
+['Closing on a mortgage', 'JPMORGAN CHASE & CO.', 235],
+['Closing on a mortgage', 'OCWEN FINANCIAL CORPORATION', 203],
+['Closing on a mortgage', 'NATIONSTAR MORTGAGE', 184],
+['Closing on a mortgage', 'Ditech Financial LLC', 102],
+['Closing on a mortgage', 'CITIBANK, N.A.', 93],
+['Closing on a mortgage', 'QUICKEN LOANS, INC.', 92],
+['Closing on a mortgage', 'SELECT PORTFOLIO SERVICING, INC.', 85],
+['Closing on a mortgage', 'U.S. BANCORP', 74]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

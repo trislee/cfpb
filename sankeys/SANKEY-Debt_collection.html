@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Debt collection Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Debt collection', "Cont'd attempts collect debt not owed", 60683],
+["Cont'd attempts collect debt not owed", 'ENCORE CAPITAL GROUP INC.', 3016],
+["Cont'd attempts collect debt not owed", 'ERC', 2332],
+["Cont'd attempts collect debt not owed", 'PORTFOLIO RECOVERY ASSOCIATES INC', 1931],
+["Cont'd attempts collect debt not owed", 'Convergent Resources, Inc.', 1223],
+["Cont'd attempts collect debt not owed", 'TRANSWORLD SYSTEMS INC', 1045],
+["Cont'd attempts collect debt not owed", 'AFNI INC.', 1016],
+["Cont'd attempts collect debt not owed", 'CITIBANK, N.A.', 944],
+["Cont'd attempts collect debt not owed", 'Diversified Consultants, Inc.', 880],
+["Cont'd attempts collect debt not owed", 'Resurgent Capital Services L.P.', 848],
+["Cont'd attempts collect debt not owed", 'SYNCHRONY FINANCIAL', 824],
+['Debt collection', 'Attempts to collect debt not owed', 51620],
+['Attempts to collect debt not owed', 'PORTFOLIO RECOVERY ASSOCIATES INC', 2170],
+['Attempts to collect debt not owed', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 1832],
+['Attempts to collect debt not owed', 'EQUIFAX, INC.', 1712],
+['Attempts to collect debt not owed', 'Experian Information Solutions Inc.', 1712],
+['Attempts to collect debt not owed', 'ERC', 1436],
+['Attempts to collect debt not owed', 'ENCORE CAPITAL GROUP INC.', 1407],
+['Attempts to collect debt not owed', 'Diversified Consultants, Inc.', 1342],
+['Attempts to collect debt not owed', 'Convergent Resources, Inc.', 1249],
+['Attempts to collect debt not owed', 'Resurgent Capital Services L.P.', 1077],
+['Attempts to collect debt not owed', 'CAPITAL ONE FINANCIAL CORPORATION', 875],
+['Debt collection', 'Communication tactics', 37266],
+['Communication tactics', 'PORTFOLIO RECOVERY ASSOCIATES INC', 1989],
+['Communication tactics', 'ENCORE CAPITAL GROUP INC.', 1539],
+['Communication tactics', 'SYNCHRONY FINANCIAL', 1008],
+['Communication tactics', 'CITIBANK, N.A.', 928],
+['Communication tactics', 'Navient Solutions, LLC.', 906],
+['Communication tactics', 'CAPITAL ONE FINANCIAL CORPORATION', 718],
+['Communication tactics', 'Alliance Data Card Services', 682],
+['Communication tactics', 'Diversified Consultants, Inc.', 528],
+['Communication tactics', 'TRANSWORLD SYSTEMS INC', 453],
+['Communication tactics', 'Allied Interstate LLC', 418],
+['Debt collection', 'Disclosure verification of debt', 30797],
+['Disclosure verification of debt', 'ENCORE CAPITAL GROUP INC.', 1734],
+['Disclosure verification of debt', 'PORTFOLIO RECOVERY ASSOCIATES INC', 1100],
+['Disclosure verification of debt', 'ERC', 967],
+['Disclosure verification of debt', 'Resurgent Capital Services L.P.', 607],
+['Disclosure verification of debt', 'CAPITAL ONE FINANCIAL CORPORATION', 594],
+['Disclosure verification of debt', 'CITIBANK, N.A.', 515],
+['Disclosure verification of debt', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 474],
+['Disclosure verification of debt', 'JPMORGAN CHASE & CO.', 454],
+['Disclosure verification of debt', 'SYNCHRONY FINANCIAL', 438],
+['Disclosure verification of debt', 'TRANSWORLD SYSTEMS INC', 432],
+['Debt collection', 'Written notification about debt', 27285],
+['Written notification about debt', 'PORTFOLIO RECOVERY ASSOCIATES INC', 1160],
+['Written notification about debt', 'ENCORE CAPITAL GROUP INC.', 884],
+['Written notification about debt', 'ERC', 722],
+['Written notification about debt', 'Resurgent Capital Services L.P.', 662],
+['Written notification about debt', 'Diversified Consultants, Inc.', 615],
+['Written notification about debt', 'Convergent Resources, Inc.', 588],
+['Written notification about debt', 'CAPITAL ONE FINANCIAL CORPORATION', 562],
+['Written notification about debt', 'SYNCHRONY FINANCIAL', 473],
+['Written notification about debt', 'TRANSWORLD SYSTEMS INC', 431],
+['Written notification about debt', 'I.C. System, Inc.', 396],
+['Debt collection', 'False statements or representation', 21761],
+['False statements or representation', 'ENCORE CAPITAL GROUP INC.', 915],
+['False statements or representation', 'PORTFOLIO RECOVERY ASSOCIATES INC', 685],
+['False statements or representation', 'ERC', 406],
+['False statements or representation', 'SYNCHRONY FINANCIAL', 392],
+['False statements or representation', 'TRANSWORLD SYSTEMS INC', 386],
+['False statements or representation', 'CITIBANK, N.A.', 356],
+['False statements or representation', 'Resurgent Capital Services L.P.', 313],
+['False statements or representation', 'CAPITAL ONE FINANCIAL CORPORATION', 313],
+['False statements or representation', 'Navient Solutions, LLC.', 286],
+['False statements or representation', 'National Credit Systems,Inc.', 286],
+['Debt collection', 'Took or threatened to take negative or legal action', 11102],
+['Took or threatened to take negative or legal action', 'ENCORE CAPITAL GROUP INC.', 509],
+['Took or threatened to take negative or legal action', 'PORTFOLIO RECOVERY ASSOCIATES INC', 360],
+['Took or threatened to take negative or legal action', 'CAPITAL ONE FINANCIAL CORPORATION', 222],
+['Took or threatened to take negative or legal action', 'Resurgent Capital Services L.P.', 212],
+['Took or threatened to take negative or legal action', 'WELLS FARGO & COMPANY', 189],
+['Took or threatened to take negative or legal action', 'CITIBANK, N.A.', 177],
+['Took or threatened to take negative or legal action', 'SYNCHRONY FINANCIAL', 176],
+['Took or threatened to take negative or legal action', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 154],
+['Took or threatened to take negative or legal action', 'ERC', 135],
+['Took or threatened to take negative or legal action', 'HSBC NORTH AMERICA HOLDINGS INC.', 129],
+['Debt collection', 'Improper contact or sharing of info', 10069],
+['Improper contact or sharing of info', 'ENCORE CAPITAL GROUP INC.', 396],
+['Improper contact or sharing of info', 'PORTFOLIO RECOVERY ASSOCIATES INC', 336],
+['Improper contact or sharing of info', 'Navient Solutions, LLC.', 258],
+['Improper contact or sharing of info', 'CITIBANK, N.A.', 206],
+['Improper contact or sharing of info', 'SYNCHRONY FINANCIAL', 151],
+['Improper contact or sharing of info', 'CAPITAL ONE FINANCIAL CORPORATION', 148],
+['Improper contact or sharing of info', 'ERC', 108],
+['Improper contact or sharing of info', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 103],
+['Improper contact or sharing of info', 'TRANSWORLD SYSTEMS INC', 96],
+['Improper contact or sharing of info', 'Diversified Consultants, Inc.', 92],
+['Debt collection', 'Taking/threatening an illegal action', 8861],
+['Taking/threatening an illegal action', 'ENCORE CAPITAL GROUP INC.', 524],
+['Taking/threatening an illegal action', 'PORTFOLIO RECOVERY ASSOCIATES INC', 220],
+['Taking/threatening an illegal action', 'CAPITAL ONE FINANCIAL CORPORATION', 204],
+['Taking/threatening an illegal action', 'JPMORGAN CHASE & CO.', 185],
+['Taking/threatening an illegal action', 'CITIBANK, N.A.', 170],
+['Taking/threatening an illegal action', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 160],
+['Taking/threatening an illegal action', 'HSBC NORTH AMERICA HOLDINGS INC.', 155],
+['Taking/threatening an illegal action', 'CNG FINANCIAL CORPORATION', 147],
+['Taking/threatening an illegal action', 'WELLS FARGO & COMPANY', 133],
+['Taking/threatening an illegal action', 'ACE CASH EXPRESS, INC.', 131],
+['Debt collection', 'Threatened to contact someone or share information improperly', 3125],
+['Threatened to contact someone or share information improperly', 'Alliance Data Card Services', 197],
+['Threatened to contact someone or share information improperly', 'ENCORE CAPITAL GROUP INC.', 119],
+['Threatened to contact someone or share information improperly', 'PORTFOLIO RECOVERY ASSOCIATES INC', 114],
+['Threatened to contact someone or share information improperly', 'Navient Solutions, LLC.', 101],
+['Threatened to contact someone or share information improperly', 'AMERICAN EXPRESS COMPANY', 53],
+['Threatened to contact someone or share information improperly', 'SYNCHRONY FINANCIAL', 48],
+['Threatened to contact someone or share information improperly', 'CAPITAL ONE FINANCIAL CORPORATION', 43],
+['Threatened to contact someone or share information improperly', 'CITIBANK, N.A.', 42],
+['Threatened to contact someone or share information improperly', 'ERC', 29],
+['Threatened to contact someone or share information improperly', 'Direct Recovery Services, LLC', 28]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

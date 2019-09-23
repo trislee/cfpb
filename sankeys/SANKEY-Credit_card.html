@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Credit card Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Credit card', 'Billing disputes', 15136],
+['Billing disputes', 'CITIBANK, N.A.', 3215],
+['Billing disputes', 'CAPITAL ONE FINANCIAL CORPORATION', 2133],
+['Billing disputes', 'JPMORGAN CHASE & CO.', 1744],
+['Billing disputes', 'SYNCHRONY FINANCIAL', 1551],
+['Billing disputes', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1536],
+['Billing disputes', 'AMERICAN EXPRESS COMPANY', 1124],
+['Billing disputes', 'DISCOVER BANK', 651],
+['Billing disputes', 'BARCLAYS BANK DELAWARE', 582],
+['Billing disputes', 'WELLS FARGO & COMPANY', 566],
+['Billing disputes', 'U.S. BANCORP', 351],
+['Credit card', 'Other', 9353],
+['Other', 'CITIBANK, N.A.', 1576],
+['Other', 'CAPITAL ONE FINANCIAL CORPORATION', 1416],
+['Other', 'JPMORGAN CHASE & CO.', 1095],
+['Other', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 956],
+['Other', 'SYNCHRONY FINANCIAL', 886],
+['Other', 'AMERICAN EXPRESS COMPANY', 632],
+['Other', 'DISCOVER BANK', 468],
+['Other', 'WELLS FARGO & COMPANY', 417],
+['Other', 'BARCLAYS BANK DELAWARE', 345],
+['Other', 'U.S. BANCORP', 255],
+['Credit card', 'Identity theft / Fraud / Embezzlement', 8481],
+['Identity theft / Fraud / Embezzlement', 'CAPITAL ONE FINANCIAL CORPORATION', 1469],
+['Identity theft / Fraud / Embezzlement', 'CITIBANK, N.A.', 1352],
+['Identity theft / Fraud / Embezzlement', 'JPMORGAN CHASE & CO.', 978],
+['Identity theft / Fraud / Embezzlement', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 816],
+['Identity theft / Fraud / Embezzlement', 'SYNCHRONY FINANCIAL', 772],
+['Identity theft / Fraud / Embezzlement', 'AMERICAN EXPRESS COMPANY', 470],
+['Identity theft / Fraud / Embezzlement', 'DISCOVER BANK', 433],
+['Identity theft / Fraud / Embezzlement', 'BARCLAYS BANK DELAWARE', 412],
+['Identity theft / Fraud / Embezzlement', 'WELLS FARGO & COMPANY', 390],
+['Identity theft / Fraud / Embezzlement', 'U.S. BANCORP', 247],
+['Credit card', 'Closing/Cancelling account', 6389],
+['Closing/Cancelling account', 'CITIBANK, N.A.', 1085],
+['Closing/Cancelling account', 'CAPITAL ONE FINANCIAL CORPORATION', 929],
+['Closing/Cancelling account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 822],
+['Closing/Cancelling account', 'JPMORGAN CHASE & CO.', 702],
+['Closing/Cancelling account', 'SYNCHRONY FINANCIAL', 623],
+['Closing/Cancelling account', 'AMERICAN EXPRESS COMPANY', 473],
+['Closing/Cancelling account', 'DISCOVER BANK', 372],
+['Closing/Cancelling account', 'WELLS FARGO & COMPANY', 289],
+['Closing/Cancelling account', 'BARCLAYS BANK DELAWARE', 267],
+['Closing/Cancelling account', 'U.S. BANCORP', 153],
+['Credit card', 'APR or interest rate', 5506],
+['APR or interest rate', 'CITIBANK, N.A.', 1015],
+['APR or interest rate', 'JPMORGAN CHASE & CO.', 981],
+['APR or interest rate', 'CAPITAL ONE FINANCIAL CORPORATION', 725],
+['APR or interest rate', 'SYNCHRONY FINANCIAL', 658],
+['APR or interest rate', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 484],
+['APR or interest rate', 'DISCOVER BANK', 320],
+['APR or interest rate', 'WELLS FARGO & COMPANY', 293],
+['APR or interest rate', 'AMERICAN EXPRESS COMPANY', 241],
+['APR or interest rate', 'BARCLAYS BANK DELAWARE', 228],
+['APR or interest rate', 'U.S. BANCORP', 154],
+['Credit card', 'Late fee', 3639],
+['Late fee', 'CITIBANK, N.A.', 907],
+['Late fee', 'SYNCHRONY FINANCIAL', 557],
+['Late fee', 'CAPITAL ONE FINANCIAL CORPORATION', 419],
+['Late fee', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 318],
+['Late fee', 'JPMORGAN CHASE & CO.', 275],
+['Late fee', 'WELLS FARGO & COMPANY', 236],
+['Late fee', 'AMERICAN EXPRESS COMPANY', 200],
+['Late fee', 'TD BANK US HOLDING COMPANY', 151],
+['Late fee', 'BARCLAYS BANK DELAWARE', 104],
+['Late fee', 'U.S. BANCORP', 75],
+['Credit card', 'Customer service / Customer relations', 3504],
+['Customer service / Customer relations', 'CITIBANK, N.A.', 738],
+['Customer service / Customer relations', 'CAPITAL ONE FINANCIAL CORPORATION', 472],
+['Customer service / Customer relations', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 354],
+['Customer service / Customer relations', 'SYNCHRONY FINANCIAL', 351],
+['Customer service / Customer relations', 'JPMORGAN CHASE & CO.', 323],
+['Customer service / Customer relations', 'AMERICAN EXPRESS COMPANY', 298],
+['Customer service / Customer relations', 'DISCOVER BANK', 160],
+['Customer service / Customer relations', 'WELLS FARGO & COMPANY', 152],
+['Customer service / Customer relations', 'BARCLAYS BANK DELAWARE', 146],
+['Customer service / Customer relations', 'U.S. BANCORP', 80],
+['Credit card', 'Delinquent account', 3218],
+['Delinquent account', 'CAPITAL ONE FINANCIAL CORPORATION', 605],
+['Delinquent account', 'CITIBANK, N.A.', 593],
+['Delinquent account', 'SYNCHRONY FINANCIAL', 346],
+['Delinquent account', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 301],
+['Delinquent account', 'JPMORGAN CHASE & CO.', 281],
+['Delinquent account', 'DISCOVER BANK', 174],
+['Delinquent account', 'AMERICAN EXPRESS COMPANY', 147],
+['Delinquent account', 'WELLS FARGO & COMPANY', 94],
+['Delinquent account', 'U.S. BANCORP', 78],
+['Delinquent account', 'BARCLAYS BANK DELAWARE', 74],
+['Credit card', 'Credit determination', 3057],
+['Credit determination', 'CITIBANK, N.A.', 617],
+['Credit determination', 'CAPITAL ONE FINANCIAL CORPORATION', 414],
+['Credit determination', 'SYNCHRONY FINANCIAL', 390],
+['Credit determination', 'JPMORGAN CHASE & CO.', 373],
+['Credit determination', 'AMERICAN EXPRESS COMPANY', 209],
+['Credit determination', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 195],
+['Credit determination', 'WELLS FARGO & COMPANY', 184],
+['Credit determination', 'BARCLAYS BANK DELAWARE', 124],
+['Credit determination', 'DISCOVER BANK', 122],
+['Credit determination', 'U.S. BANCORP', 72],
+['Credit card', 'Advertising and marketing', 2926],
+['Advertising and marketing', 'CITIBANK, N.A.', 490],
+['Advertising and marketing', 'AMERICAN EXPRESS COMPANY', 443],
+['Advertising and marketing', 'JPMORGAN CHASE & CO.', 409],
+['Advertising and marketing', 'CAPITAL ONE FINANCIAL CORPORATION', 365],
+['Advertising and marketing', 'U.S. BANCORP', 188],
+['Advertising and marketing', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 187],
+['Advertising and marketing', 'DISCOVER BANK', 179],
+['Advertising and marketing', 'SYNCHRONY FINANCIAL', 165],
+['Advertising and marketing', 'BARCLAYS BANK DELAWARE', 159],
+['Advertising and marketing', 'WELLS FARGO & COMPANY', 102]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>Credit reporting, credit repair services, or other personal consumer reports Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['Credit reporting, credit repair services, or other personal consumer reports', 'Incorrect information on your report', 163150],
+['Incorrect information on your report', 'EQUIFAX, INC.', 44590],
+['Incorrect information on your report', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 43039],
+['Incorrect information on your report', 'Experian Information Solutions Inc.', 42713],
+['Incorrect information on your report', 'CAPITAL ONE FINANCIAL CORPORATION', 2114],
+['Incorrect information on your report', 'CITIBANK, N.A.', 1329],
+['Incorrect information on your report', 'SYNCHRONY FINANCIAL', 1327],
+['Incorrect information on your report', 'JPMORGAN CHASE & CO.', 1176],
+['Incorrect information on your report', 'WELLS FARGO & COMPANY', 1096],
+['Incorrect information on your report', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 1017],
+['Incorrect information on your report', 'LEXISNEXIS', 978],
+['Credit reporting, credit repair services, or other personal consumer reports', "Problem with a credit reporting company's investigation into an existing problem", 61724],
+["Problem with a credit reporting company's investigation into an existing problem", 'EQUIFAX, INC.', 17850],
+["Problem with a credit reporting company's investigation into an existing problem", 'Experian Information Solutions Inc.', 16521],
+["Problem with a credit reporting company's investigation into an existing problem", 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 16399],
+["Problem with a credit reporting company's investigation into an existing problem", 'CAPITAL ONE FINANCIAL CORPORATION', 842],
+["Problem with a credit reporting company's investigation into an existing problem", 'CITIBANK, N.A.', 481],
+["Problem with a credit reporting company's investigation into an existing problem", 'JPMORGAN CHASE & CO.', 434],
+["Problem with a credit reporting company's investigation into an existing problem", 'SYNCHRONY FINANCIAL', 393],
+["Problem with a credit reporting company's investigation into an existing problem", 'WELLS FARGO & COMPANY', 389],
+["Problem with a credit reporting company's investigation into an existing problem", 'BANK OF AMERICA, NATIONAL ASSOCIATION', 339],
+["Problem with a credit reporting company's investigation into an existing problem", 'LEXISNEXIS', 315],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Improper use of your report', 37561],
+['Improper use of your report', 'EQUIFAX, INC.', 12441],
+['Improper use of your report', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 7412],
+['Improper use of your report', 'Experian Information Solutions Inc.', 5661],
+['Improper use of your report', 'CAPITAL ONE FINANCIAL CORPORATION', 1180],
+['Improper use of your report', 'SYNCHRONY FINANCIAL', 861],
+['Improper use of your report', 'JPMORGAN CHASE & CO.', 669],
+['Improper use of your report', 'CITIBANK, N.A.', 656],
+['Improper use of your report', 'CORELOGIC INC', 499],
+['Improper use of your report', 'ALLY FINANCIAL INC.', 421],
+['Improper use of your report', 'WELLS FARGO & COMPANY', 370],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Unable to get your credit report or credit score', 6150],
+['Unable to get your credit report or credit score', 'EQUIFAX, INC.', 2497],
+['Unable to get your credit report or credit score', 'Experian Information Solutions Inc.', 1646],
+['Unable to get your credit report or credit score', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 1407],
+['Unable to get your credit report or credit score', 'ID Analytics, Inc.', 97],
+['Unable to get your credit report or credit score', 'Credit Karma, Inc.', 57],
+['Unable to get your credit report or credit score', 'LEXISNEXIS', 43],
+['Unable to get your credit report or credit score', 'CAPITAL ONE FINANCIAL CORPORATION', 43],
+['Unable to get your credit report or credit score', 'WELLS FARGO & COMPANY', 27],
+['Unable to get your credit report or credit score', 'Innovis', 24],
+['Unable to get your credit report or credit score', 'JPMORGAN CHASE & CO.', 22],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Problem with fraud alerts or security freezes', 5943],
+['Problem with fraud alerts or security freezes', 'EQUIFAX, INC.', 2252],
+['Problem with fraud alerts or security freezes', 'Experian Information Solutions Inc.', 2029],
+['Problem with fraud alerts or security freezes', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 1255],
+['Problem with fraud alerts or security freezes', 'ID Analytics, Inc.', 40],
+['Problem with fraud alerts or security freezes', 'LEXISNEXIS', 39],
+['Problem with fraud alerts or security freezes', 'Innovis', 35],
+['Problem with fraud alerts or security freezes', 'CAPITAL ONE FINANCIAL CORPORATION', 27],
+['Problem with fraud alerts or security freezes', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 22],
+['Problem with fraud alerts or security freezes', 'Fidelity National Information Services, Inc. (FNIS)', 20],
+['Problem with fraud alerts or security freezes', 'JPMORGAN CHASE & CO.', 18],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Credit monitoring or identity theft protection services', 3098],
+['Credit monitoring or identity theft protection services', 'EQUIFAX, INC.', 934],
+['Credit monitoring or identity theft protection services', 'Experian Information Solutions Inc.', 773],
+['Credit monitoring or identity theft protection services', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 593],
+['Credit monitoring or identity theft protection services', 'CAPITAL ONE FINANCIAL CORPORATION', 78],
+['Credit monitoring or identity theft protection services', 'CITIBANK, N.A.', 48],
+['Credit monitoring or identity theft protection services', 'SYNCHRONY FINANCIAL', 48],
+['Credit monitoring or identity theft protection services', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 33],
+['Credit monitoring or identity theft protection services', 'Alliance Data Card Services', 31],
+['Credit monitoring or identity theft protection services', 'WELLS FARGO & COMPANY', 25],
+['Credit monitoring or identity theft protection services', 'JPMORGAN CHASE & CO.', 22],
+['Credit reporting, credit repair services, or other personal consumer reports', "Problem with a company's investigation into an existing issue", 679],
+["Problem with a company's investigation into an existing issue", 'EQUIFAX, INC.', 80],
+["Problem with a company's investigation into an existing issue", 'LEXISNEXIS', 57],
+["Problem with a company's investigation into an existing issue", 'Experian Information Solutions Inc.', 49],
+["Problem with a company's investigation into an existing issue", 'Fidelity National Information Services, Inc. (FNIS)', 45],
+["Problem with a company's investigation into an existing issue", 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 39],
+["Problem with a company's investigation into an existing issue", 'EARLY WARNING SERVICES, LLC', 33],
+["Problem with a company's investigation into an existing issue", 'BANK OF AMERICA, NATIONAL ASSOCIATION', 22],
+["Problem with a company's investigation into an existing issue", 'FIRST ADVANTAGE CORPORATION', 19],
+["Problem with a company's investigation into an existing issue", 'Checkr, Inc', 19],
+["Problem with a company's investigation into an existing issue", 'CITIBANK, N.A.', 17],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Identity theft protection or other monitoring services', 368],
+['Identity theft protection or other monitoring services', 'EQUIFAX, INC.', 106],
+['Identity theft protection or other monitoring services', 'Experian Information Solutions Inc.', 65],
+['Identity theft protection or other monitoring services', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 36],
+['Identity theft protection or other monitoring services', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 13],
+['Identity theft protection or other monitoring services', 'WELLS FARGO & COMPANY', 11],
+['Identity theft protection or other monitoring services', 'JPMORGAN CHASE & CO.', 10],
+['Identity theft protection or other monitoring services', 'SYNCHRONY FINANCIAL', 7],
+['Identity theft protection or other monitoring services', 'CAPITAL ONE FINANCIAL CORPORATION', 6],
+['Identity theft protection or other monitoring services', 'Fidelity National Information Services, Inc. (FNIS)', 5],
+['Identity theft protection or other monitoring services', 'TD BANK US HOLDING COMPANY', 5],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Fraud or scam', 351],
+['Fraud or scam', 'John C. Heath, Attorney at Law, PLLC', 65],
+['Fraud or scam', 'EQUIFAX, INC.', 21],
+['Fraud or scam', 'Experian Information Solutions Inc.', 19],
+['Fraud or scam', 'GLOBAL CLIENT SOLUTIONS, LLC', 19],
+['Fraud or scam', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 12],
+['Fraud or scam', 'CAPITAL ONE FINANCIAL CORPORATION', 10],
+['Fraud or scam', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 8],
+['Fraud or scam', 'Creditrepair.com Holdings, Inc.', 8],
+['Fraud or scam', 'CITIBANK, N.A.', 8],
+['Fraud or scam', 'Credit Karma, Inc.', 8],
+['Credit reporting, credit repair services, or other personal consumer reports', 'Problem with customer service', 220],
+['Problem with customer service', 'Experian Information Solutions Inc.', 39],
+['Problem with customer service', 'EQUIFAX, INC.', 35],
+['Problem with customer service', 'TRANSUNION INTERMEDIATE HOLDINGS, INC.', 24],
+['Problem with customer service', 'John C. Heath, Attorney at Law, PLLC', 18],
+['Problem with customer service', 'CAPITAL ONE FINANCIAL CORPORATION', 9],
+['Problem with customer service', 'CITIBANK, N.A.', 6],
+['Problem with customer service', 'SYNCHRONY FINANCIAL', 6],
+['Problem with customer service', 'Credit Karma, Inc.', 5],
+['Problem with customer service', 'Web Source Market LLC/DBA Collection Shield 360', 3],
+['Problem with customer service', 'JPMORGAN CHASE & CO.', 3]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>

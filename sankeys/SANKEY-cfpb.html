@@ -1,4 +1,24 @@
-[['All', 'Mortgage', 286617],
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>CFPB Sankey diagram</h1>
+
+<div id="sankey"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+google.charts.load('current', {'packages':['sankey']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'From');
+  data.addColumn('string', 'To');
+  data.addColumn('number', 'Weight');
+  data.addRows([['All', 'Mortgage', 286617],
 ['Mortgage', 'BANK OF AMERICA, NATIONAL ASSOCIATION', 43294],
 ['Mortgage', 'WELLS FARGO & COMPANY', 37459],
 ['Mortgage', 'OCWEN FINANCIAL CORPORATION', 27074],
@@ -57,4 +77,33 @@
 ['Consumer Loan', 'WELLS FARGO & COMPANY', 2528],
 ['Consumer Loan', 'ALLY FINANCIAL INC.', 2094],
 ['Consumer Loan', 'CAPITAL ONE FINANCIAL CORPORATION', 1212],
-['Consumer Loan', 'JPMORGAN CHASE & CO.', 1029]]
+['Consumer Loan', 'JPMORGAN CHASE & CO.', 1029]]);
+
+  // Sets chart options.
+  var colors =['#d60000', '#8c3bff', '#018700', '#00acc6', '#97ff00', '#ff7ed1', '#6b004f', '#ffa52f', '#573b00', '#005659', '#0000dd'];
+
+
+var options = {
+height: 600,
+//width: 800,
+sankey: {
+  node: {
+    colors: colors
+  },
+  link: {
+    colorMode: 'source',
+    colors: colors
+  },
+  iterations: 1000,
+}
+};
+
+  // Instantiates and draws our chart, passing in some options.
+  var chart = new google.visualization.Sankey(document.getElementById('sankey'));
+  chart.draw(data, options);
+}
+
+</script>
+
+</body>
+</html>
