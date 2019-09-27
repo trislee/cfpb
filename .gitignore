@@ -7,9 +7,10 @@
 # and sctipts directory
 !scripts/
 !sankeys/
+!dashboards/
 
 # and Python files
 !*.py
 !scripts/*.py
 !sankeys/*.html
-!sankeys/*.txt
+!dashboards/*.html

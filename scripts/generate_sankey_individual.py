@@ -85,7 +85,7 @@ if __name__ == '__main__':
   df = pd.read_csv( DATASET_FILE )
 
   # create output directory if it doesn't exist
-  os.makedirs( OUTPUT_DIR )
+  os.makedirs( OUTPUT_DIR, exist_ok = True )
 
   # list of hex colors for use in the Sankey diagram
   color_list = glasbey[:11]
@@ -100,7 +100,7 @@ if __name__ == '__main__':
 
     edges.append(['All', product, np.sum(df['Product'] == product) ])
 
-    c = Counter(df[df['Product'] == product]['Company']).most_common(5)
+    c = Counter(df[df['Product'] == product]['Company']).most_common( 5 )
     for company, count in c:
       edges.append([product, company, count])
 

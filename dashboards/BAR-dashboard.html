@@ -1,0 +1,274 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+<title>
+          Google Visualization API Sample
+        </title>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load('visualization', '1.1', {packages: ['controls']});
+</script>
+<script type="text/javascript">
+
+function drawVisualization() {
+
+// Prepare the data
+      var data1 = google.visualization.arrayToDataTable([['Company', 'Product', 'Complaints'],
+['EQUIFAX, INC.', 'All', 131478],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Bank account or service', 13917],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Checking or savings account', 7863],
+['SANTANDER CONSUMER USA HOLDINGS INC.', 'Consumer Loan', 2537],
+['CITIBANK, N.A.', 'Credit card', 16817],
+['CITIBANK, N.A.', 'Credit card or prepaid card', 8577],
+['EQUIFAX, INC.', 'Credit reporting', 48128],
+['EQUIFAX, INC.', 'Credit reporting, credit repair services, or other personal consumer reports', 80851],
+['ENCORE CAPITAL GROUP INC.', 'Debt collection', 11043],
+['Coinbase, Inc.', 'Money transfer, virtual currency, or money service', 2843],
+['WESTERN UNION COMPANY, THE', 'Money transfers', 1414],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Mortgage', 43294],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Other financial service', 73],
+['Big Picture Loans, LLC', 'Payday loan', 487],
+['ONEMAIN FINANCIAL HOLDINGS, LLC.', 'Payday loan, title loan, or personal loan', 515],
+['Empowerment Ventures, LLC', 'Prepaid card', 870],
+['Navient Solutions, LLC.', 'Student loan', 26102],
+['SANTANDER CONSUMER USA HOLDINGS INC.', 'Vehicle loan or lease', 1715],
+['Experian Information Solutions Inc.', 'All', 117367],
+['WELLS FARGO & COMPANY', 'Bank account or service', 13333],
+['JPMORGAN CHASE & CO.', 'Checking or savings account', 6948],
+['WELLS FARGO & COMPANY', 'Consumer Loan', 2528],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Credit card', 12920],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Credit card or prepaid card', 7701],
+['Experian Information Solutions Inc.', 'Credit reporting', 45378],
+['TRANSUNION INTERMEDIATE HOLDINGS, INC.', 'Credit reporting, credit repair services, or other personal consumer reports', 70258],
+['PORTFOLIO RECOVERY ASSOCIATES INC', 'Debt collection', 10065],
+['PAYPAL HOLDINGS INC.', 'Money transfer, virtual currency, or money service', 2076],
+['MONEYGRAM PAYMENT SYSTEMS WORLDWIDE INC', 'Money transfers', 1279],
+['WELLS FARGO & COMPANY', 'Mortgage', 37459],
+['JPMORGAN CHASE & CO.', 'Other financial service', 60],
+['ENOVA INTERNATIONAL, INC.', 'Payday loan', 444],
+['Big Picture Loans, LLC', 'Payday loan, title loan, or personal loan', 379],
+['AMERICAN EXPRESS COMPANY', 'Prepaid card', 638],
+['AES/PHEAA', 'Student loan', 7937],
+['ALLY FINANCIAL INC.', 'Vehicle loan or lease', 994],
+['TRANSUNION INTERMEDIATE HOLDINGS, INC.', 'All', 112531],
+['JPMORGAN CHASE & CO.', 'Bank account or service', 9816],
+['WELLS FARGO & COMPANY', 'Checking or savings account', 5824],
+['ALLY FINANCIAL INC.', 'Consumer Loan', 2094],
+['JPMORGAN CHASE & CO.', 'Credit card', 10373],
+['JPMORGAN CHASE & CO.', 'Credit card or prepaid card', 6159],
+['TRANSUNION INTERMEDIATE HOLDINGS, INC.', 'Credit reporting', 39821],
+['Experian Information Solutions Inc.', 'Credit reporting, credit repair services, or other personal consumer reports', 69556],
+['ERC', 'Debt collection', 6540],
+['WESTERN UNION COMPANY, THE', 'Money transfer, virtual currency, or money service', 910],
+['PAYPAL HOLDINGS INC.', 'Money transfers', 921],
+['OCWEN FINANCIAL CORPORATION', 'Mortgage', 27074],
+['WELLS FARGO & COMPANY', 'Other financial service', 57],
+['Delbert Services', 'Payday loan', 369],
+['WELLS FARGO & COMPANY', 'Payday loan, title loan, or personal loan', 376],
+['NETSPEND CORPORATION', 'Prepaid card', 429],
+['NELNET, INC.', 'Student loan', 2491],
+['WELLS FARGO & COMPANY', 'Vehicle loan or lease', 755],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'All', 85179],
+['CITIBANK, N.A.', 'Bank account or service', 4450],
+['CITIBANK, N.A.', 'Checking or savings account', 2618],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Consumer Loan', 1212],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Credit card', 9111],
+['SYNCHRONY FINANCIAL', 'Credit card or prepaid card', 5314],
+['Fidelity National Information Services, Inc. (FNIS)', 'Credit reporting', 831],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Credit reporting, credit repair services, or other personal consumer reports', 4342],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Debt collection', 4444],
+['JPMORGAN CHASE & CO.', 'Money transfer, virtual currency, or money service', 752],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Money transfers', 271],
+['JPMORGAN CHASE & CO.', 'Mortgage', 21369],
+['WESTERN UNION COMPANY, THE', 'Other financial service', 52],
+['ACE CASH EXPRESS, INC.', 'Payday loan', 326],
+['ENOVA INTERNATIONAL, INC.', 'Payday loan, title loan, or personal loan', 347],
+['PAYPAL HOLDINGS INC.', 'Prepaid card', 355],
+['SLM CORPORATION', 'Student loan', 1687],
+['GENERAL MOTORS FINANCIAL COMPANY, INC.', 'Vehicle loan or lease', 684],
+['WELLS FARGO & COMPANY', 'All', 73831],
+['U.S. BANCORP', 'Bank account or service', 3726],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Checking or savings account', 1899],
+['JPMORGAN CHASE & CO.', 'Consumer Loan', 1029],
+['SYNCHRONY FINANCIAL', 'Credit card', 8779],
+['AMERICAN EXPRESS COMPANY', 'Credit card or prepaid card', 4841],
+['Credit Karma, Inc.', 'Credit reporting', 411],
+['SYNCHRONY FINANCIAL', 'Credit reporting, credit repair services, or other personal consumer reports', 2708],
+['CITIBANK, N.A.', 'Debt collection', 4404],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Money transfer, virtual currency, or money service', 735],
+['WELLS FARGO & COMPANY', 'Money transfers', 254],
+['NATIONSTAR MORTGAGE', 'Mortgage', 20222],
+['GLOBAL CLIENT SOLUTIONS, LLC', 'Other financial service', 48],
+['CURO Intermediate Holdings', 'Payday loan', 302],
+['CURO Intermediate Holdings', 'Payday loan, title loan, or personal loan', 327],
+['U.S. BANCORP', 'Prepaid card', 322],
+['WELLS FARGO & COMPANY', 'Student loan', 1670],
+['TOYOTA MOTOR CREDIT CORPORATION', 'Vehicle loan or lease', 576],
+['JPMORGAN CHASE & CO.', 'All', 63434],
+['PNC Bank N.A.', 'Bank account or service', 3490],
+['U.S. BANCORP', 'Checking or savings account', 1725],
+['TOYOTA MOTOR CREDIT CORPORATION', 'Consumer Loan', 775],
+['AMERICAN EXPRESS COMPANY', 'Credit card', 6669],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Credit card or prepaid card', 4373],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Credit reporting', 363],
+['CITIBANK, N.A.', 'Credit reporting, credit repair services, or other personal consumer reports', 2597],
+['SYNCHRONY FINANCIAL', 'Debt collection', 4396],
+['WELLS FARGO & COMPANY', 'Money transfer, virtual currency, or money service', 728],
+['JPMORGAN CHASE & CO.', 'Money transfers', 228],
+['Ditech Financial LLC', 'Mortgage', 13226],
+['Fidelity National Information Services, Inc. (FNIS)', 'Other financial service', 40],
+['CNG FINANCIAL CORPORATION', 'Payday loan', 287],
+['LDF Holdings, LLC', 'Payday loan, title loan, or personal loan', 229],
+['Comerica', 'Prepaid card', 279],
+['DISCOVER BANK', 'Student loan', 1178],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Vehicle loan or lease', 559],
+['CITIBANK, N.A.', 'All', 51669],
+['TD BANK US HOLDING COMPANY', 'Bank account or service', 3060],
+['TD BANK US HOLDING COMPANY', 'Checking or savings account', 1722],
+['CITIBANK, N.A.', 'Consumer Loan', 765],
+['DISCOVER BANK', 'Credit card', 4264],
+['Alliance Data Card Services', 'Credit card or prepaid card', 3131],
+['CORELOGIC INC', 'Credit reporting', 313],
+['JPMORGAN CHASE & CO.', 'Credit reporting, credit repair services, or other personal consumer reports', 2381],
+['Convergent Resources, Inc.', 'Debt collection', 4266],
+['MONEYGRAM PAYMENT SYSTEMS WORLDWIDE INC', 'Money transfer, virtual currency, or money service', 584],
+['CITIBANK, N.A.', 'Money transfers', 102],
+['CITIBANK, N.A.', 'Mortgage', 9833],
+['John C. Heath, Attorney at Law, PLLC', 'Other financial service', 39],
+['CASHCALL, INC.', 'Payday loan', 278],
+['SYNCHRONY FINANCIAL', 'Payday loan, title loan, or personal loan', 204],
+['Blackhawk Network Holdings Inc.', 'Prepaid card', 207],
+['GREAT LAKES', 'Student loan', 1133],
+['JPMORGAN CHASE & CO.', 'Vehicle loan or lease', 511],
+['CAPITAL ONE FINANCIAL CORPORATION', 'All', 37418],
+['SUNTRUST BANKS, INC.', 'Bank account or service', 2559],
+['PNC Bank N.A.', 'Checking or savings account', 1670],
+['SYNCHRONY FINANCIAL', 'Consumer Loan', 682],
+['WELLS FARGO & COMPANY', 'Credit card', 4041],
+['DISCOVER BANK', 'Credit card or prepaid card', 2389],
+['LEXISNEXIS', 'Credit reporting', 305],
+['WELLS FARGO & COMPANY', 'Credit reporting, credit repair services, or other personal consumer reports', 1952],
+['Diversified Consultants, Inc.', 'Debt collection', 4263],
+['SQUARE INC', 'Money transfer, virtual currency, or money service', 227],
+['Google Compare Credit Cards Inc.', 'Money transfers', 58],
+['SELECT PORTFOLIO SERVICING, INC.', 'Mortgage', 8219],
+['MONEYGRAM PAYMENT SYSTEMS WORLDWIDE INC', 'Other financial service', 36],
+['COMMUNITY CHOICE FINANCIAL, INC.', 'Payday loan', 248],
+['LENDING CLUB CORP', 'Payday loan, title loan, or personal loan', 204],
+['CITIBANK, N.A.', 'Prepaid card', 206],
+['ACS Education Services', 'Student loan', 1039],
+['HYUNDAI CAPITAL AMERICA', 'Vehicle loan or lease', 439],
+['Navient Solutions, LLC.', 'All', 30553],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Bank account or service', 2445],
+['SUNTRUST BANKS, INC.', 'Checking or savings account', 1539],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Consumer Loan', 681],
+['BARCLAYS BANK DELAWARE', 'Credit card', 3514],
+['WELLS FARGO & COMPANY', 'Credit card or prepaid card', 2288],
+['CITIBANK, N.A.', 'Credit reporting', 267],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Credit reporting, credit repair services, or other personal consumer reports', 1698],
+['Resurgent Capital Services L.P.', 'Debt collection', 4094],
+['TD BANK US HOLDING COMPANY', 'Money transfer, virtual currency, or money service', 201],
+['RIA FINANCIAL', 'Money transfers', 55],
+['U.S. BANCORP', 'Mortgage', 5718],
+['CITIBANK, N.A.', 'Other financial service', 34],
+['Mobiloans, LLC', 'Payday loan', 154],
+['TMX Finance LLC', 'Payday loan, title loan, or personal loan', 171],
+['INCOMM HOLDINGS INC.', 'Prepaid card', 62],
+['JPMORGAN CHASE & CO.', 'Student loan', 857],
+['NISSAN MOTOR ACCEPTANCE CORPORATION', 'Vehicle loan or lease', 375],
+['OCWEN FINANCIAL CORPORATION', 'All', 28371],
+['CITIZENS FINANCIAL GROUP, INC.', 'Bank account or service', 2045],
+['UNITED SERVICES AUTOMOBILE ASSOCIATION', 'Checking or savings account', 1158],
+['ONEMAIN FINANCIAL HOLDINGS, LLC.', 'Consumer Loan', 650],
+['U.S. BANCORP', 'Credit card', 2448],
+['BARCLAYS BANK DELAWARE', 'Credit card or prepaid card', 2132],
+['JPMORGAN CHASE & CO.', 'Credit reporting', 192],
+['LEXISNEXIS', 'Credit reporting, credit repair services, or other personal consumer reports', 1522],
+['TRANSWORLD SYSTEMS INC', 'Debt collection', 3845],
+['CAPITAL ONE FINANCIAL CORPORATION', 'Money transfer, virtual currency, or money service', 193],
+['PNC Bank N.A.', 'Money transfers', 39],
+['PNC Bank N.A.', 'Mortgage', 5040],
+['First Data Corporation', 'Other financial service', 25],
+['Advance America, Cash Advance Centers, Inc.', 'Payday loan', 146],
+['COMMUNITY CHOICE FINANCIAL, INC.', 'Payday loan, title loan, or personal loan', 153],
+['BANK OF AMERICA, NATIONAL ASSOCIATION', 'Prepaid card', 55],
+['TRANSWORLD SYSTEMS INC', 'Student loan', 743],
+['CREDIT ACCEPTANCE CORPORATION', 'Vehicle loan or lease', 351]]);
+
+  // Define a category picker control for the Type column
+
+
+
+ var categoryPicker = new google.visualization.ControlWrapper({
+    'controlType': 'CategoryFilter',
+    'containerId': 'control',
+    'options': {
+      'filterColumnLabel': 'Product',
+      'ui': {
+      'labelStacking': 'vertical',
+        'allowTyping': false,
+        'allowMultiple': false,
+      }
+    },
+    'state': {
+        'selectedValues': ['All']
+    }
+  });
+
+  // Define a table
+
+ var columns_kpi = new google.visualization.ChartWrapper({
+    'chartType': 'BarChart',
+    'containerId': 'chart',
+    'options': {
+      'height': 600,
+      'title': 'CFPB Complaints by Company and Category',
+      'chartArea': {left:'45%',top:'10&',width:'50%',height:'50%'},
+      'hAxis': {
+       'title': 'Number of Complaints',
+        'maxTextLines': 1,
+        },
+        'legend': {position: 'none'}
+      //'pieSliceText': 'label'
+    },
+
+    // Instruct the piechart to use columns 0 (company) and 2 (number of complaints)
+    // from the 'data' DataTable.
+    'view': {'columns': [0, 2]}
+  });
+
+
+  // Create a dashboard
+  new google.visualization.Dashboard(document.getElementById('dashboard_alarms'));
+  new google.visualization.Dashboard(document.getElementById('dashboard_kpi')).
+      // Establish bindings, declaring the both the slider and the category
+      // picker will drive both charts.
+      bind([categoryPicker], [columns_kpi,]).
+      // Draw the entire dashboard.
+      draw(data1);
+
+}
+
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="dashboard">
+      <table>
+        <tr style='vertical-align: top'>
+          <td style='width: 200px; font-size: 0.9em;'>
+            <div id="control"></div>
+          </td>
+          <td style='height: 600px'>
+            <div style="float: left;" id="chart"></div>
+          </td>
+        </tr>
+      </table>
+    <div id="dashboard_alarms"/>
+    <div id="dashboard_kpi"/>
+    </div>
+  </body>
+</html>
